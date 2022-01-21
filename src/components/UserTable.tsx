@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
-import { useDeleteUser } from './useDeleteUser';
+import { useDeleteUser } from 'src/views/User/hooks/useDeleteUser';
 import { AppContext } from 'src/providers/AppContextProvider';
 import FlashAlert from './FlashAlert';
 import DeleteModal from './DeleteModal';

@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
+import axios from 'axios';
+import { userKeys } from './queryKeys';
 import { api } from 'src/api/api';
 
 export interface Props {
@@ -10,14 +11,16 @@ export interface Props {
 export function useDeleteUser({ setFlashMessage, hideModal }: Props) {
   const queryClient = useQueryClient();
 
-  const deleteUser = async (id: any) => {
-    const response = await axios.delete(`${api}/${id}`);
-    return response.data;
+  const deleteUser = async (id: number) => {
+    return await axios.delete(`${api}/${id}`);
   };
 
-  const mutation = useMutation((id) => axios.delete(`${api}/${id}`), {
-    onSuccess: () => {
-      queryClient.invalidateQueries(['users']);
+  const mutation = useMutation(deleteUser, {
+    onError: () => {
+      queryClient.invalidateQueries(userKeys.all);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(userKeys.all);
       setFlashMessage('Delete Successful!');
       hideModal();
     },

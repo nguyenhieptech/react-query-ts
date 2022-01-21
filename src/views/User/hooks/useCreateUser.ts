@@ -9,7 +9,6 @@ export function useCreateUser() {
   const { setFlashMessage } = useContext(AppContext);
   const queryClient = useQueryClient();
 
-  // Optimistic Updates
   // https://react-query.tanstack.com/guides/optimistic-updates#updating-a-list-of-todos-when-adding-a-new-todo
   const createUser = async (newUser: any) => {
     const response = await axios.post(api, newUser);

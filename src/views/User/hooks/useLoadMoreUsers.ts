@@ -8,6 +8,7 @@ export function useLoadMoreUsers({ pageLimit }: { pageLimit: number }) {
     return await axios.get(`${api}?_page=${pageParam}&_limit=${pageLimit}`);
   };
 
+  // https://joshgoestoflatiron.medium.com/february-10-pagination-in-a-json-server-api-with-the-link-header-dea63eb0a835
   const parseLinkHeader = (linkHeader: any) => {
     const linkHeadersArray = linkHeader
       .split(', ')

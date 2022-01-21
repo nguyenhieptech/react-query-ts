@@ -25,7 +25,6 @@ export function useEditUser() {
   const { id }: any = useParams();
   const queryClient = useQueryClient();
 
-  // Optimistic Updates
   // https://react-query.tanstack.com/guides/optimistic-updates#updating-a-single-todo
   const editUser = async (updatedUser: any) => {
     return await axios.put(`${api}/${id}`, updatedUser);
