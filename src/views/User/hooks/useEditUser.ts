@@ -5,7 +5,7 @@ import { api } from 'src/api/api';
 import { userKeys } from './queryKeys';
 
 export function useUser() {
-  // https://reactrouter.com/web/api/Hooks/useparams
+  // https://reactrouter.com/docs/en/v6/api#useparams
   const { id }: any = useParams();
 
   // https://react-query.tanstack.com/guides/query-functions#query-function-variables
@@ -47,13 +47,3 @@ export function useEditUser() {
 
   return mutation;
 }
-
-// using fetch API
-// const fetchUser = async ({ queryKey }) => {
-//   const [_key, { id }] = queryKey
-//   const response = await fetch(`${api}/${id}`)
-//   if (!response.ok) {
-//     throw new Error(response.statusText)
-//   }
-//   return response.json()
-// }

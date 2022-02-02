@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useDeleteUser } from 'src/views/User/hooks/useDeleteUser';
 import { AppContext } from 'src/providers/AppContextProvider';
+import DeleteIcon from 'src/icons/delete';
+import EditIcon from 'src/icons/edit';
 import FlashAlert from './FlashAlert';
 import DeleteModal from './DeleteModal';
-import EditIcon from 'src/icons/edit';
-import DeleteIcon from 'src/icons/delete';
 import './table.css';
 
 function UserTable({ users }: any) {

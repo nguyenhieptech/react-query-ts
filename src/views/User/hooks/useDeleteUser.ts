@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query';
 import axios from 'axios';
-import { userKeys } from './queryKeys';
 import { api } from 'src/api/api';
+import { userKeys } from './queryKeys';
 
 export interface Props {
   setFlashMessage: any;

@@ -26,7 +26,7 @@ export function usePaginatedUsers({
   return paginatedUsers;
 }
 
-// inside fetchUsers function
+// inside getUsers function
 // Using fetch
 // const response = await fetch(`${api}?_page=${page}&_limit=${pageLimit}`)
 // return response.json()

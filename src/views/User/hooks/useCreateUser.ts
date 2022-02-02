@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { useContext } from 'react';
 import { useQueryClient, useMutation } from 'react-query';
+import { useContext } from 'react';
+import axios from 'axios';
+import { AppContext } from 'src/providers/AppContextProvider';
 import { api } from 'src/api/api';
 import { userKeys } from './queryKeys';
-import { AppContext } from 'src/providers/AppContextProvider';
 
 export function useCreateUser() {
   const { setFlashMessage } = useContext(AppContext);
