@@ -27,13 +27,13 @@ This project is setup with:
 - Clone the project
 
 ```bash
-git clone https://github.com/nguyenhieptech/react-query-example
+git clone https://github.com/nguyenhieptech/react-query-ts
 ```
 
 - Go to the project directory:
 
 ```bash
-cd react-query-example
+cd react-query-ts
 ```
 
 - Install dependencies
