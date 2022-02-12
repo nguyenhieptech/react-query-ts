@@ -1,5 +1,9 @@
 nav a {
+<<<<<<< HEAD
   @apply mr-4 font-semibold text-lg text-gray-700 no-underline pb-2 w-24 block text-center;
+=======
+  @apply mr-4 font-semibold text-base text-gray-700 no-underline pb-2 w-24 block text-center;
+>>>>>>> 75d39b4c7c04f8b126bd82d44980b7dd2b7b5231
 }
 
 .active {
