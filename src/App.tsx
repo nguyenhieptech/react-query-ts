@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Modal from 'react-modal';
-import Navbar from './layout/Navbar';
+import Navbar from './components/Navbar';
 import Users from './views/User/Users';
 import InfiniteQuery from './views/User/InfiniteQuery';
 import PaginatedQuery from './views/User/PaginatedQuery';

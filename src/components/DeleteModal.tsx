@@ -19,14 +19,14 @@ function DeleteModal({ id, showModal, deleteAction, cancelAction }: any) {
   return (
     <Modal style={customStyles} isOpen={showModal}>
       <div className="flex">
-        <div className="mt-2 text-3xl text-red-700">
+        <div className="mt-2 text-xl text-red-700">
           <ExclamationIcon className="" />
         </div>
         <div className="ml-8">
-          <h3 className="text-xl font-semibold text-gray-900">
+          <h3 className="text-lg font-semibold text-gray-900">
             Delete Confirmation
           </h3>
-          <p className="mt-2 text-sm font-semibold text-gray-500">
+          <p className="mt-2 text-base font-semibold text-gray-500">
             Are you sure you want to delete{' '}
             <span className="font-bold">User {id}</span> ?
           </p>
