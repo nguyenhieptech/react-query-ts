@@ -13,17 +13,18 @@ function UserTable({ users }: any) {
 
   // Delete Modal Show State
   const [deleteId, setDeleteId] = useState(0);
-  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const hideModal = () => setShowModal(false);
+  function closeModal() {
+    setIsModalOpen(false);
+  }
 
-  const deleteMutation = useDeleteUser({ setFlashMessage, hideModal });
-
-  const showDeleteModal = (id: number) => {
+  function showDeleteModal(id: number) {
     setDeleteId(id);
-    setShowModal(true);
-  };
+    setIsModalOpen(true);
+  }
 
+  const deleteMutation = useDeleteUser({ setFlashMessage, closeModal });
   const onDelete = async (id: any) => {
     deleteMutation.mutateAsync(id);
   };
@@ -32,9 +33,10 @@ function UserTable({ users }: any) {
     <>
       <DeleteModal
         id={deleteId}
-        showModal={showModal}
+        isModalOpen={isModalOpen}
+        cancelAction={closeModal}
         deleteAction={onDelete}
-        cancelAction={hideModal}
+        isLoading={deleteMutation.isLoading}
       />
 
       <div className="flex justify-between items-center mb-4">
