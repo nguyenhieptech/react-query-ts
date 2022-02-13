@@ -5,10 +5,10 @@ import { userKeys } from './queryKeys';
 
 export interface Props {
   setFlashMessage: any;
-  hideModal: () => void;
+  closeModal: () => void;
 }
 
-export function useDeleteUser({ setFlashMessage, hideModal }: Props) {
+export function useDeleteUser({ setFlashMessage, closeModal }: Props) {
   const queryClient = useQueryClient();
 
   const deleteUser = async (id: number) => {
@@ -22,7 +22,7 @@ export function useDeleteUser({ setFlashMessage, hideModal }: Props) {
     onSettled: () => {
       queryClient.invalidateQueries(userKeys.all);
       setFlashMessage('Delete Successful!');
-      hideModal();
+      closeModal();
     },
   });
 
